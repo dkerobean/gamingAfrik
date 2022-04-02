@@ -20,8 +20,17 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'isAdmin',
         'password',
+        'username', 'Earnings' , 'is_verified', 'profile_image', 'gold_trophy',
+        'silver_trophy', 'bronze_trophy', 'elite_trophy', 'wins',
+
     ];
+
+    public function tournaments(){
+
+      return $this->belongsToMany(Tournament::class);
+    }
 
     /**
      * The attributes that should be hidden for serialization.

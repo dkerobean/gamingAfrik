@@ -30,8 +30,8 @@
                         <a href="index.html#"><img src="images/search_btn.png" alt="icon"></a>
                     </div> --}}
 
-                    <a href="https://pixner.net/begam/login.html" class="login-btn">Login</a>
-                    <a href="https://pixner.net/begam/registration.html" class="cmn-btn">Join Now!</a>
+                    <a href="{{ route('login') }}" class="login-btn">Login</a>
+                    <a href="{{ route('register') }}" class="cmn-btn">Join Now!</a>
                 </div>
             </div>
         </div>
