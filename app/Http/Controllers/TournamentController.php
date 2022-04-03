@@ -16,7 +16,7 @@ class TournamentController extends Controller
     {
         $tournaments = Tournament::all();
 
-        return view('admin.ViewTournament', compact('tournaments'));
+        return view('admin.Tournaments.ViewTournament', compact('tournaments'));
     }
 
     /**
@@ -26,7 +26,7 @@ class TournamentController extends Controller
      */
     public function create()
     {
-        return view('admin.CreareTournaments');
+        return view('admin.Tournaments.CreateTournaments');
     }
 
     /**
@@ -40,14 +40,12 @@ class TournamentController extends Controller
 
       $request->validate([
         'name'=>'required', 'description'=>'required', 'game'=>'required', 'image'=>'required',
-        'start_date'=>'required', 'check_in'=>'required', 'enrolled'=>'', 'prize'=>'required',
-        'skill_level'=>'required', 'entry_fee'=>'required', 'available_slots'=>'', 'video_url'=>'',
-        'rules'=>'', 'format'=>'', 'prize_claim'=>'', '1st'=>'', '2nd'=>'', '3rd'=>''
+        'rules'=>'required', 'slots'=>'required',
       ]);
 
       Tournament::create($request->all());
 
-      return redirect()->route('admin.ViewTournament')->with('success', 'Tournament Created !');
+      return redirect()->route('tournament.index')->with('success', 'Tournament Created!');
 
     }
 
@@ -57,9 +55,10 @@ class TournamentController extends Controller
      * @param  \App\Models\Tournament  $tournament
      * @return \Illuminate\Http\Response
      */
-    public function show(Tournament $tournament)
+    public function show($id)
     {
-        return view('admin.ViewTournament');
+        $tournaments = Tournament::Find($id);
+        return view('admin.Tournaments.ShowTournament', compact('tournaments'));
     }
 
     /**
@@ -68,9 +67,11 @@ class TournamentController extends Controller
      * @param  \App\Models\Tournament  $tournament
      * @return \Illuminate\Http\Response
      */
-    public function edit(Tournament $tournament)
+    public function edit($id)
     {
-        //
+      $tournament = Tournament::find($id);
+
+      return view('admin.Tournaments.UpdateTournaments', compact('tournament'));
     }
 
     /**
@@ -82,7 +83,16 @@ class TournamentController extends Controller
      */
     public function update(Request $request, Tournament $tournament)
     {
-        //
+
+
+      $request->validate([
+        'name'=>'required', 'description'=>'required', 'game'=>'required', 'image'=>'required',
+
+      ]);
+
+      $tournament->update($request->all());
+
+      return redirect()->route('tournament.index')->with('success', 'Tournament Updated !');
     }
 
     /**
@@ -93,6 +103,8 @@ class TournamentController extends Controller
      */
     public function destroy(Tournament $tournament)
     {
-        //
+        $tournament->delete();
+
+        return redirect()->route('tournament.index')->with('success', 'Deleted successfully');
     }
 }

@@ -1,21 +1,16 @@
 <ul class="metismenu" id="menu">
   <li>
-    <a href="javascript:;" class="has-arrow">
+    <a href="{{ route('dashboard.index') }}" class="">
       <div class="parent-icon"><i class='bx bx-home-circle'></i>
       </div>
       <div class="menu-title">Dashboard</div>
     </a>
-    <ul>
-      <li> <a href="https://codervent.com/syndron/demo/vertical/index.html"><i class="bx bx-right-arrow-alt"></i>eCommerce</a>
-      </li>
-      <li> <a href="https://codervent.com/syndron/demo/vertical/index2.html"><i class="bx bx-right-arrow-alt"></i>Analytics</a>
-      </li>
-    </ul>
+
   </li>
 
   <li class="menu-label">UI Elements</li>
   <li>
-    <a href="https://codervent.com/syndron/demo/vertical/widgets.html">
+    <a href="#">
       <div class="parent-icon"><i class='bx bx-cookie'></i>
       </div>
       <div class="menu-title">Widgets</div>
@@ -37,35 +32,12 @@
   </li>
   <li>
     <a class="has-arrow" href="javascript:;">
-      <div class="parent-icon"><i class='bx bx-bookmark-heart'></i>
+      <div class="parent-icon"><i class='bx bx-support'></i>
       </div>
-      <div class="menu-title">Components</div>
+      <div class="menu-title">Contact</div>
     </a>
     <ul>
-      <li> <a href="component-alerts.html"><i class="bx bx-right-arrow-alt"></i>Alerts</a>
-      </li>
-      <li> <a href="https://codervent.com/syndron/demo/vertical/component-accordions.html"><i class="bx bx-right-arrow-alt"></i>Accordions</a>
-      </li>
-      <li> <a href="https://codervent.com/syndron/demo/vertical/component-badges.html"><i class="bx bx-right-arrow-alt"></i>Badges</a>
-      </li>
-      <li> <a href="https://codervent.com/syndron/demo/vertical/component-buttons.html"><i class="bx bx-right-arrow-alt"></i>Buttons</a>
-      </li>
-      <li> <a href="https://codervent.com/syndron/demo/vertical/component-cards.html"><i class="bx bx-right-arrow-alt"></i>Cards</a>
-      </li>
-      <li> <a href="https://codervent.com/syndron/demo/vertical/component-carousels.html"><i class="bx bx-right-arrow-alt"></i>Carousels</a>
-      </li>
-      <li> <a href="https://codervent.com/syndron/demo/vertical/component-list-groups.html"><i class="bx bx-right-arrow-alt"></i>List Groups</a>
-      </li>
-      <li> <a href="https://codervent.com/syndron/demo/vertical/component-media-object.html"><i class="bx bx-right-arrow-alt"></i>Media Objects</a>
-      </li>
-      <li> <a href="https://codervent.com/syndron/demo/vertical/component-modals.html"><i class="bx bx-right-arrow-alt"></i>Modals</a>
-      </li>
-      <li> <a href="https://codervent.com/syndron/demo/vertical/component-navs-tabs.html"><i class="bx bx-right-arrow-alt"></i>Navs & Tabs</a>
-      </li>
-      <li> <a href="https://codervent.com/syndron/demo/vertical/component-navbar.html"><i class="bx bx-right-arrow-alt"></i>Navbar</a>
-      </li>
-      <li> <a href="https://codervent.com/syndron/demo/vertical/component-paginations.html"><i class="bx bx-right-arrow-alt"></i>Pagination</a>
-      </li>
+      
       <li> <a href="https://codervent.com/syndron/demo/vertical/component-popovers-tooltips.html"><i class="bx bx-right-arrow-alt"></i>Popovers & Tooltips</a>
       </li>
       <li> <a href="https://codervent.com/syndron/demo/vertical/component-progress-bars.html"><i class="bx bx-right-arrow-alt"></i>Progress</a>
@@ -80,9 +52,9 @@
   </li>
   <li>
     <a class="has-arrow" href="javascript:;">
-      <div class="parent-icon"><i class="bx bx-repeat"></i>
+      <div class="parent-icon"><i class="bx bx-user-circle"></i>
       </div>
-      <div class="menu-title">Content</div>
+      <div class="menu-title">Users</div>
     </a>
     <ul>
       <li> <a href="https://codervent.com/syndron/demo/vertical/content-grid-system.html"><i class="bx bx-right-arrow-alt"></i>Grid System</a>

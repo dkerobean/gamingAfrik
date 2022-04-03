@@ -25,15 +25,15 @@ class CreateTournamentsTable extends Migration
             $table->string('prize');
             $table->string('skill_level');
             $table->string('entry_fee');
-            $table->string('available slots');
+            $table->string('slots');
             $table->string('video_url');
             $table->string('rules');
             $table->string('team_size');
             $table->string('format');
             $table->string('prize_claim');
-            $table->string('1st');
-            $table->string('2nd');
-            $table->string('3rd');
+            $table->string('first');
+            $table->string('second');
+            $table->string('third');
 
 
 

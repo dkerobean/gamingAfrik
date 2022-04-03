@@ -11,8 +11,8 @@ class Tournament extends Model
 
     protected $fillable = [
       'name', 'description', 'game', 'image', 'start_date', 'check_in','enrolled',
-      'prize', 'skill_level', 'entry_fee', 'available_slots', 'video_url', 'rules',
-      'format', 'prize_claim', '1st', '2nd', '3rd'
+      'prize', 'skill_level', 'entry_fee', 'slots', 'video_url', 'rules',
+      'format', 'prize_claim', 'first', 'second', 'third', 'team_size', 'prize_claim'
     ];
 
     public function users(){
