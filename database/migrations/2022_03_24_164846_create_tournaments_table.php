@@ -16,20 +16,20 @@ class CreateTournamentsTable extends Migration
         Schema::create('tournaments', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('description');
+            $table->text('description');
             $table->string('game');
             $table->string('image');
             $table->string('start_date');
             $table->string('check_in');
-            $table->string('enrolled');
+            $table->string('enrolled')->nullable();
             $table->string('prize');
             $table->string('skill_level');
             $table->string('entry_fee');
             $table->string('slots');
             $table->string('video_url');
-            $table->string('rules');
+            $table->text('rules');
             $table->string('team_size');
-            $table->string('format');
+            $table->text('format');
             $table->string('prize_claim');
             $table->string('first');
             $table->string('second');

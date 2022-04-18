@@ -18,7 +18,7 @@
             </ol>
           </nav>
         </div>
-        <
+        
       </div>
       <!--end breadcrumb-->
       <div class="row">
@@ -33,7 +33,7 @@
                 <h5 class="mb-0 text-primary">New Tournament</h5>
               </div>
               <hr>
-              <form action="{{ route('tournament.store') }}" method="POST" class="row g-3" >
+              <form action="{{ route('tournament.store') }}" method="POST" class="row g-3" enctype="multipart/form-data">
                 @csrf
                 <div class="col-md-6">
                   <label for="" class="form-label">Name</label>
@@ -111,10 +111,10 @@
                   <label for="" class="form-label">2nd</label>
                   <input type="text" class="form-control" name="second" >
                 </div>
-                <div class="col-md-4">
+                {{-- <div class="col-md-4">
                   <label for="" class="form-label">iMAGE</label>
                   <input type="text" class="form-control" name="image" >
-                </div>
+                </div> --}}
                 <div class="col-md-4">
                   <label for="" class="form-label">3rd</label>
                   <input type="text" class="form-control" name="third" >
@@ -129,15 +129,13 @@
                   <label class="form-label">Start Date:</label>
                   <input type="date" name="start_date" class="form-control">
                 </div>
+
                 <div class="input-group mb-3">
-
-									<input type="file" class="form-control" name=""  aria-describedby="inputGroupFileAddon03" aria-label="Upload">
+								<input type="file" class="form-control" name="image"  aria-describedby="inputGroupFileAddon3" aria-label="Upload" >
 								</div>
-                <div class="col-12">
 
-                </div>
                 <div class="col-12">
-                  <button type="submit" class="btn btn-dark btn-lg px-5"><i class='bx bxs-lock-open'></i>Login</button>
+                  <button type="submit" class="btn btn-success btn-lg px-5">Create</button>
                 </div>
 
 

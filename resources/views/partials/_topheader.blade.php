@@ -10,7 +10,7 @@
                             <p>Compete in Free and Paid entry Tournaments. Transform your
                                 games to real money eSports</p>
                             <div class="btn-play d-flex justify-content-center align-items-center">
-                                <a href="#" class="cmn-btn">Get Started</a>
+                                <a href="/register" class="cmn-btn">Get Started</a>
                                 <a href="#" class="mfp-iframe popupvideo">
                                     <img src="images/play-icon.png" alt="play">
                                 </a>
@@ -53,24 +53,17 @@
                     </div>
                 </div>
                 <div class="available-game-carousel">
+
+
+
+                  @foreach($games as $game)
                     <div class="single-item">
-                        <a href="index.html#"><img src="images/game-1.png" alt="image"></a>
+                        <a href="index.html#"><img src="{{'Games/'.$game->image}}" alt="image"></a>
                     </div>
-                    <div class="single-item">
-                        <a href="index.html#"><img src="images/game-2.png" alt="image"></a>
-                    </div>
-                    <div class="single-item">
-                        <a href="index.html#"><img src="images/game-3.png" alt="image"></a>
-                    </div>
-                    <div class="single-item">
-                        <a href="index.html#"><img src="images/game-4.png" alt="image"></a>
-                    </div>
-                    <div class="single-item">
-                        <a href="index.html#"><img src="images/game-3.png" alt="image"></a>
-                    </div>
+                  @endforeach
                 </div>
                 <div class="btn-area text-center">
-                    <a href="https://pixner.net/begam/tournaments.html" class="cmn-btn">View All</a>
+                    <a href="" class="cmn-btn">View All</a>
                 </div>
             </div>
         </div>

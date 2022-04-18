@@ -42,6 +42,12 @@
   <!-- banner-section end -->
 
   <!-- Contact Start -->
+
+
+
+
+
+
   <section id="contact-section" class="pt-120 pb-120">
       <div class="overlay">
           <div class="container">
@@ -56,19 +62,40 @@
               </div>
               <div class="row">
                   <div class="col-md-8">
-                      <form action="contact.html#" method="post">
+                    @if ($message = Session::get('success'))
+                      <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <strong>Success</strong> {{ $message }}
+                        <button type="button" class="close text-dark" data-dismiss="alert" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      @endif
+
+
+                        @if ($errors->any())
+                          <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <strong>Error</strong> {{ $errors()->first() }}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                              <span aria-hidden="true text-dark">&times;</span>
+                            </button>
+                          </div>
+                        @endif
+
+                        <br>
+                      <form action="{{ route('contacts.store') }}" method="POST">
+                        @csrf
                           <h5>Leave your message</h5>
                           <div class="form-group">
                               <label for="name">Name</label>
-                              <input type="text" id="name" placeholder="Enter your Name">
+                              <input type="text" name="name" placeholder="Enter your Name">
                           </div>
                           <div class="form-group">
                               <label for="email">Email</label>
-                              <input type="email" id="email" placeholder="Enter your email">
+                              <input type="email" name="email" placeholder="Enter your email">
                           </div>
                           <div class="form-group">
                               <label for="email">Message</label>
-                              <textarea rows="6" placeholder="Enter your message"></textarea>
+                              <textarea rows="6" name="message" placeholder="Enter your message"></textarea>
                           </div>
                           <button class="cmn-btn" type="submit">Submit Now</button>
                       </form>

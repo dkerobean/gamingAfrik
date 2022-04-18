@@ -15,7 +15,7 @@
                     <div class="navbar-collapse collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav main-menu ml-auto">
                             <li><a href="#" class="active">Home</a></li>
-                            <li class=""><a href="index.html#0">Tournaments</a>
+                            <li class=""><a href="{{ route('tournaments.index') }}">Tournaments</a>
 
                             </li>
                               <li><a href="#" class="">Shop</a></li>
@@ -30,8 +30,14 @@
                         <a href="index.html#"><img src="images/search_btn.png" alt="icon"></a>
                     </div> --}}
 
+                    @if(Auth::check())
+
+                    <a href="{{ route('logout') }}" class="cmn-btn">Logout</a>
+                  @else
                     <a href="{{ route('login') }}" class="login-btn">Login</a>
                     <a href="{{ route('register') }}" class="cmn-btn">Join Now!</a>
+
+                  @endif
                 </div>
             </div>
         </div>

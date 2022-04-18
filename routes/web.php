@@ -1,4 +1,4 @@
-  <?php
+     <?php
 
 use Illuminate\Support\Facades\Route;
 
@@ -13,18 +13,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 Auth::routes();
 
 Route::group(['namespace' => 'App\Http\Controllers' ,'prefix' => 'admin', 'middleware'=>'is_admin'], function() {
     Route::Resource('/dashboard', 'AdminController');
     Route::Resource('/tournament', 'TournamentController');
-  });
+    Route::Resource('/contacts', 'ContactController');
+    Route::Resource('/games', 'GamesController');
+    Route::Resource('/users', 'UsersController');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+  });  
+
+Route::get('/', [App\Http\Controllers\PagesController::class, 'index'])->name('welcome');
 Route::get('/profile', [App\Http\Controllers\PagesController::class, 'profile'])->name('profile');
 Route::get('/contact', [App\Http\Controllers\PagesController::class, 'contact'])->name('contact');
 Route::get('/about', [App\Http\Controllers\PagesController::class, 'about'])->name('about');
+Route::Resource('/tournaments', App\Http\Controllers\UserTournament::class);

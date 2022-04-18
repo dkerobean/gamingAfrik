@@ -39,9 +39,9 @@
   				@endif
 
 
-  					@if ($message = Session::get('error'))
+  					@if ($errors->any())
   						<div class="alert alert-danger border-0 bg-primary alert-dismissible fade show">
-  							<div class="text-white">A simple primary alert—check it out!</div>
+  							<div class="text-white">{{ $errors->first() }}</div>
   							<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   						</div>
   					@endif

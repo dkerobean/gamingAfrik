@@ -1,4 +1,4 @@
-@extends('layouts.app')
+  @extends('layouts.app')
 
 @section('content')
 
@@ -44,14 +44,17 @@
               <div class="row justify-content-between">
                   <div class="col-md-6">
                       <div class="profile-area d-flex align-items-center">
-                          <div class="photo">
-                              <img src="images/profile-logo.png" alt="Image">
-                          </div>
+
+                            <div class="photo">
+                                  <img src="images/profile-logo.png" alt="Image">
+                              </div>
+                          
+
                           <div class="name-area">
-                              <h4>Carter Stanton</h4>
+                              <h4>{{ Auth::user()->name; }}</h4>
                               <span>536K followers</span>
                           </div>
-                      </div>              
+                      </div>
                   </div>
                   <div class="col-md-4 d-flex justify-content-center justify-content-md-end">
                       <div class="right d-flex align-items-center">

@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Tournament;
 use Illuminate\Http\Request;
+use Image;
+
+
+
 
 class TournamentController extends Controller
 {
@@ -12,12 +16,15 @@ class TournamentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
         $tournaments = Tournament::all();
 
         return view('admin.Tournaments.ViewTournament', compact('tournaments'));
     }
+
+
 
     /**
      * Show the form for creating a new resource.
@@ -39,11 +46,44 @@ class TournamentController extends Controller
     {
 
       $request->validate([
-        'name'=>'required', 'description'=>'required', 'game'=>'required', 'image'=>'required',
+        'name'=>'required', 'description'=>'required', 'game'=>'required',
         'rules'=>'required', 'slots'=>'required',
       ]);
 
-      Tournament::create($request->all());
+
+        if($request->HasFile('image')){
+        $image = $request->file('image');
+        $filename = time().'.'.$image->getClientOriginalName();
+        $location = public_path('Tournament/'.$filename);
+        Image::make($image)->save($location);
+
+      }
+
+
+        $tourn = new Tournament;
+        $tourn->image = $filename;
+        $tourn->name = $request->name;
+        $tourn->game = $request->game;
+        $tourn->description = $request->name;
+        $tourn->start_date = $request->start_date;
+        $tourn->check_in = $request->check_in;
+        $tourn->enrolled = $request->enrolled;
+        $tourn->prize = $request->prize;
+        $tourn->skill_level = $request->skill_level;
+        $tourn->entry_fee = $request->entry_fee;
+        $tourn->slots = $request->slots;
+        $tourn->video_url = $request->video_url;
+        $tourn->rules = $request->rules;
+        $tourn->team_size = $request->team_size;
+        $tourn->format = $request->format;
+        $tourn->prize_claim = $request->prize_claim;
+        $tourn->first = $request->first;
+        $tourn->second = $request->second;
+        $tourn->third = $request->third;
+
+        $tourn->save();
+
+
 
       return redirect()->route('tournament.index')->with('success', 'Tournament Created!');
 

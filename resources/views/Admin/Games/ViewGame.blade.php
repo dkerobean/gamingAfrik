@@ -7,25 +7,25 @@
 			<div class="page-content">
 				<!--breadcrumb-->
 				<div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-					<div class="breadcrumb-title pe-3">Tournaments</div>
+					<div class="breadcrumb-title pe-3">Available Games</div>
 					<div class="ps-3">
 						<nav aria-label="breadcrumb">
 							<ol class="breadcrumb mb-0 p-0">
 								<li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
 								</li>
-								<li class="breadcrumb-item active" aria-current="page">View Tournament</li>
+								<li class="breadcrumb-item active" aria-current="page">View Games</li>
 							</ol>
 						</nav>
 					</div>
 					<div class="ms-auto">
 						<div class="btn-group">
 
-                <a href="{{ route('tournament.create') }}" class="btn btn-primary btn-lg" role="button" aria-disabled="true">Create Tournament</a>
+                <a href="{{ route('games.create') }}" class="btn btn-primary btn-lg" role="button" aria-disabled="true">Create Game</a>
 						</div>
 					</div>
 				</div>
 				<!--end breadcrumb-->
-				<h6 class="mb-0 text-uppercase">View Tournament</h6>
+				<h6 class="mb-0 text-uppercase">View Games</h6>
 				<hr/>
 
 				<!--end row-->
@@ -47,29 +47,29 @@
 				<hr/>
 				<div class="row row-cols-1 row-cols-md-1 row-cols-lg-3 row-cols-xl-3">
 
-					@foreach ($tournaments as $tournament)
+					@foreach ($games as $game)
 						<div class="col">
 							<div class="card">
-								<img src="{{ asset('Tournament/'.$tournament->image) }}" class="card-img-top" alt="...">
+								<img src="{{ asset('Games/'.$game->image) }}" class="card-img-top" alt="...">
 								<div class="card-body">
-									<h5 class="card-title"><a href="{{ route('tournament.show',$tournament->id) }}"> {{ $tournament->name }} </a></h5>
-									<p class="card-text">{{ $tournament->description }}</p>
+									<h5 class="card-title"><a href="#"> {{ $game->name }} </a></h5>
+									{{-- <p class="card-text">{{ $tournament->description }}</p> --}}
 								</div>
-								<ul class="list-group list-group-flush">
+								{{-- <ul class="list-group list-group-flush">
 									<li class="list-group-item">Start Date: {{ $tournament->start_date }}</li>
 									<li class="list-group-item">Entry Fee: {{ $tournament->entry_fee }}</li>
 									<li class="list-group-item">Available Slots: {{ $tournament->slots }}</li>
-									
 
-								</ul>
 
-								<form action="{{ route('tournament.destroy', $tournament->id) }}" class="p-3" method="post">
+								</ul> --}}
+
+								<form action="{{ route('games.destroy', $game->id) }}" class="p-3" method="post">
 									@csrf
 									@method('DELETE')
 									<button type="submit" class="btn btn-danger" name="button">
 											Delete
 									</button>
-									<a href="{{ route('tournament.edit', $tournament->id) }}" class="btn btn-success">Edit</a>
+									{{-- <a href="{{ route('game.edit', $game->id) }}" class="btn btn-success">Edit</a> --}}
 								</form>
 								<div class="card-body">	<a href="#" class="card-link"></a>
 
