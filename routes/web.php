@@ -25,10 +25,11 @@ Route::group(['namespace' => 'App\Http\Controllers' ,'prefix' => 'admin', 'middl
     Route::Resource('/users', 'UsersController');
 
 
-  });  
+  });
 
 Route::get('/', [App\Http\Controllers\PagesController::class, 'index'])->name('welcome');
 Route::get('/profile', [App\Http\Controllers\PagesController::class, 'profile'])->name('profile');
 Route::get('/contact', [App\Http\Controllers\PagesController::class, 'contact'])->name('contact');
 Route::get('/about', [App\Http\Controllers\PagesController::class, 'about'])->name('about');
 Route::Resource('/tournaments', App\Http\Controllers\UserTournament::class);
+Route::Resource('/edit', App\Http\Controllers\EditUSerController::class);

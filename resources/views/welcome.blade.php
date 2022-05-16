@@ -76,7 +76,7 @@
               </div>
               <div class="row d-flex justify-content-center">
                   <div class="col-lg-6 text-center">
-                      <a href="/register" class="cmn-btn">Join Now!</a>
+                      <a href="{{ route('tournaments.index') }}" class="cmn-btn">View Tournaments</a>
                   </div>
               </div>
           </div>

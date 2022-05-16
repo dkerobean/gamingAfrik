@@ -1,4 +1,4 @@
-  @extends('layouts.app')
+    @extends('layouts.app')
 
 @section('content')
 
@@ -28,7 +28,7 @@
                           <div class="breadcrumb-area">
                               <nav aria-label="breadcrumb">
                                   <ol class="breadcrumb d-flex justify-content-center">
-                                      <li class="breadcrumb-item"><a href="https://pixner.net/begam/index.html">Home</a></li>
+                                      <li class="breadcrumb-item"><a href="">Home</a></li>
                                       <li class="breadcrumb-item"><a href="profile.html#">Pages</a></li>
                                       <li class="breadcrumb-item active" aria-current="page">Profile Page</li>
                                   </ol>
@@ -41,24 +41,43 @@
       </div>
       <div class="container">
           <div class="heading-area">
+            @if ($message = Session::get('success'))
+              <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>Success</strong> {{ $message }}
+                <button type="button" class="close text-dark" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              @endif
+
+
+                @if ($errors->any())
+                  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <strong>Error</strong> {{ $errors()->first() }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true text-dark">&times;</span>
+                    </button>
+                  </div>
+                @endif
               <div class="row justify-content-between">
                   <div class="col-md-6">
                       <div class="profile-area d-flex align-items-center">
 
-                            <div class="photo">
-                                  <img src="images/profile-logo.png" alt="Image">
+                            <div class="photo rounded-circle">
+                                  <img src="{{ asset('UserProfile/'.Auth::user()->profile_image) }}" alt="Image" width="90" height="90">
                               </div>
-                          
+
+
 
                           <div class="name-area">
-                              <h4>{{ Auth::user()->name; }}</h4>
-                              <span>536K followers</span>
+                              <h4>{{ Auth::user()->username; }}</h4>
+                              <span><a href="{{ route('edit.edit', Auth::user()->id) }}">Edit Profile</a></span>
                           </div>
                       </div>
                   </div>
                   <div class="col-md-4 d-flex justify-content-center justify-content-md-end">
                       <div class="right d-flex align-items-center">
-                          <a href="profile.html#" class="cmn-btn">Message</a>
+                          <a href="" class="cmn-btn">Message</a>
                           <div class="user-logo d-flex align-items-center justify-content-center">
                               <img src="images/user-icon.png" alt="Image">
                           </div>

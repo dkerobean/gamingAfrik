@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Tournament;
 use App\Models\User;
+use Image;
+use Illuminate\Support\Facades\Auth;
 
-class AdminController extends Controller
+class EditUserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +16,7 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $tournament = Tournament::all();
-        return view('admin.dashboard',compact('tournament'));
+
     }
 
     /**
@@ -59,7 +59,8 @@ class AdminController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::find($id);
+        return view('editUser', compact('user'));
     }
 
     /**
@@ -71,7 +72,36 @@ class AdminController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $user = User::find($id);
+
+      $request->validate([
+        'profile_image'=>'',
+        'username'=>'',
+        'name'=>'',
+
+
+      ]);
+
+    if ($request->hasFile('profile_image')) {
+
+        $image = $request->file('profile_image');
+        $filename = time() . '.' . $image->getClientOriginalExtension();
+        $location = public_path('UserProfile/'. $filename);
+        Image::make($image)->resize(800 , 400)->save($location);
+
+    }
+
+
+
+    $user->profile_image = $filename;
+    $user->name = $request->name;
+    $user->username = $request->username;
+
+    $user->save();
+
+
+    return view('profile')->with('success','User Updated !');
+
     }
 
     /**

@@ -59,7 +59,8 @@
 									<li class="list-group-item">Start Date: {{ $tournament->start_date }}</li>
 									<li class="list-group-item">Entry Fee: {{ $tournament->entry_fee }}</li>
 									<li class="list-group-item">Available Slots: {{ $tournament->slots }}</li>
-									
+									<li class="list-group-item">Users Joined: {{ $tournament->users()->count() }}</li>
+
 
 								</ul>
 

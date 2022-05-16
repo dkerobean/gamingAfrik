@@ -22,8 +22,15 @@ class User extends Authenticatable
         'email',
         'isAdmin',
         'password',
-        'username', 'Earnings' , 'is_verified', 'profile_image', 'gold_trophy',
-        'silver_trophy', 'bronze_trophy', 'elite_trophy', 'wins',
+        'username',
+        'Earnings' ,
+        'is_verified',
+        'profile_image',
+        'gold_trophy',
+        'silver_trophy',
+        'bronze_trophy',
+        'elite_trophy',
+        'wins'
 
     ];
 

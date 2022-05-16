@@ -96,8 +96,8 @@
                                   @endif
 
                                 @else
-                                  <button type="submit" name="button">
-                                      <a href="" class="cmn-btn">Login To Tournament</a>
+                                  <button class="cmn-btn text-light "type="submit" name="button">
+                                    Login To Join Tournament
                                   </button>
 
                                 @endif

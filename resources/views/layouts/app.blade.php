@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>GamingAfrik - Online Gaming Tournaments</title>
 
-    <link rel="shortcut icon" href="images/fav.png" type="image/x-icon"> {{ asset('') }}
+    <link rel="shortcut icon" href="images/fav.png" type="image/x-icon"> 
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/fontawesome.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/slick.css') }}">

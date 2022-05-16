@@ -14,7 +14,7 @@
                 <nav class="navbar navbar-expand-lg p-0">
                     <div class="navbar-collapse collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav main-menu ml-auto">
-                            <li><a href="#" class="active">Home</a></li>
+                            <li><a href="/" class="active">Home</a></li>
                             <li class=""><a href="{{ route('tournaments.index') }}">Tournaments</a>
 
                             </li>
@@ -32,6 +32,7 @@
 
                     @if(Auth::check())
 
+                    <a href="/profile" class="login-btn">Profile</a>
                     <a href="{{ route('logout') }}" class="cmn-btn">Logout</a>
                   @else
                     <a href="{{ route('login') }}" class="login-btn">Login</a>

@@ -109,7 +109,7 @@
                               </div>
                               <div class="right-area">
                                   <h6>Email</h6>
-                                  <p class="text-sm"><a href="https://pixner.net/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6e0c0b090f032e09030f0702400d0103">[email&#160;protected]</a></p>
+                                  <p class="text-sm"><a href="" class="__cf_email__" data-cfemail="6e0c0b090f032e09030f0702400d0103">[email&#160;protected]</a></p>
                               </div>
                           </div>
                           <div class="single-area d-flex align-items-center">
