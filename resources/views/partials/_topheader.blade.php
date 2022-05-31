@@ -58,12 +58,12 @@
 
                   @foreach($games as $game)
                     <div class="single-item">
-                        <a href="index.html#"><img src="{{'Games/'.$game->image}}" alt="image"></a>
+                        <a href=""><img src="{{'Games/'.$game->image}}" alt="image"></a>
                     </div>
                   @endforeach
                 </div>
                 <div class="btn-area text-center">
-                    <a href="" class="cmn-btn">View All</a>
+                    <a href="{{ route('tournaments.index') }}" class="cmn-btn">View All</a>
                 </div>
             </div>
         </div>

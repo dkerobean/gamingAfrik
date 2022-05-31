@@ -63,9 +63,27 @@
                   <div class="col-md-6">
                       <div class="profile-area d-flex align-items-center">
 
-                            <div class="photo rounded-circle">
+                             <div class="photo rounded-circle">
                                   <img src="{{ asset('UserProfile/'.Auth::user()->profile_image) }}" alt="Image" width="90" height="90">
                               </div>
+
+                              <style>
+                              .photo {
+height: 130px;
+width: 130px;
+border-radius: 50%;
+overflow: hidden;
+}
+
+img {
+width: 100%;
+height: 100%;
+}
+                              </style>
+
+
+
+
 
 
 

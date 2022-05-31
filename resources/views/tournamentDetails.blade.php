@@ -101,36 +101,29 @@
                                   </button>
 
                                 @endif
-
-
-
-
-
-
-
                             </form>
 
                           </div>
                       </div>
                       <ul class="nav nav-tabs" id="myTab" role="tablist">
                           <li class="nav-item">
-                              <a class="nav-link active" id="overview-tab" data-toggle="tab" href="tournaments-single.html#overview"
+                              <a class="nav-link active" id="overview-tab" data-toggle="tab" href="#overview"
                                   role="tab" aria-controls="overview" aria-selected="true">overview</a>
                           </li>
                           <li class="nav-item">
-                              <a class="nav-link" id="bracket-tab" data-toggle="tab" href="tournaments-single.html#bracket" role="tab"
+                              <a class="nav-link" id="bracket-tab" data-toggle="tab" href="#bracket" role="tab"
                                   aria-controls="bracket" aria-selected="false">bracket</a>
                           </li>
-                          <li class="nav-item">
-                              <a class="nav-link" id="matches-tab" data-toggle="tab" href="tournaments-single.html#matches" role="tab"
+                          {{-- <li class="nav-item">
+                              <a class="nav-link" id="matches-tab" data-toggle="tab" href="#matches" role="tab"
                                   aria-controls="matches" aria-selected="false">matches</a>
-                          </li>
+                          </li> --}}
                           <li class="nav-item">
-                              <a class="nav-link" id="participants-tab" data-toggle="tab" href="tournaments-single.html#participants"
+                              <a class="nav-link" id="participants-tab" data-toggle="tab" href="#participants"
                                   role="tab" aria-controls="participants" aria-selected="false">participants</a>
                           </li>
                           <li class="nav-item">
-                              <a class="nav-link" id="prizes-tab" data-toggle="tab" href="tournaments-single.html#prizes" role="tab"
+                              <a class="nav-link" id="prizes-tab" data-toggle="tab" href="#prizes" role="tab"
                                   aria-controls="prizes" aria-selected="false">prizes</a>
                           </li>
                       </ul>
@@ -253,7 +246,7 @@
                                           <li><a href="tournaments-single.html#"><img src="images/participants-4.png" alt="images"></a></li>
                                           <li><a href="tournaments-single.html#"><img src="images/participants-5.png" alt="images"></a></li>
                                       </ul>
-                                      <a href="tournaments-single.html#" class="right-area">12+</a>
+                                      <a href="#participants" class="right-area">{{ $tournament->users()->count()  }}</a>
                                   </div>
                               </div>
                               <div class="single-side">
@@ -293,74 +286,7 @@
                                       </div>
                                   </div>
                               </div> --}}
-                              <div class="single-side">
-                                  <h5>Admins (3)</h5>
-                                  <div class="admins-area">
-                                      <div class="admins-single">
-                                          <div class="left-area d-flex align-items-center">
-                                              <img src="images/admin-img-1.png" alt="images">
-                                              <div class="right-side">
-                                                  <h6>Davis Rosser</h6>
-                                                  <p class="text-sm">OLT Support</p>
-                                              </div>
-                                          </div>
-                                          <div class="right-area">
-                                              <div class="nice-select"><span class="current single-item share">
-                                                      <span class="dot"></span>
-                                                      <span class="dot"></span>
-                                                      <span class="dot"></span>
-                                                  </span>
-                                                  <ul class="list">
-                                                      <li><a href="tournaments-single.html#"><i class="fab fa-facebook-f"></i>Share</a></li>
-                                                      <li><a href="https://pixner.net/begam/profile.html"><i class="fas fa-share-alt"></i>View Profile</a></li>
-                                                  </ul>
-                                              </div>
-                                          </div>
-                                      </div>
-                                      <div class="admins-single">
-                                          <div class="left-area d-flex align-items-center">
-                                              <img src="images/admin-img-1.png" alt="images">
-                                              <div class="right-side">
-                                                  <h6>Davis Rosser</h6>
-                                                  <p class="text-sm">OLT Support</p>
-                                              </div>
-                                          </div>
-                                          <div class="right-area">
-                                              <div class="nice-select"><span class="current single-item share">
-                                                      <span class="dot"></span>
-                                                      <span class="dot"></span>
-                                                      <span class="dot"></span>
-                                                  </span>
-                                                  <ul class="list">
-                                                      <li><a href="tournaments-single.html#"><i class="fab fa-facebook-f"></i>Share</a></li>
-                                                      <li><a href="https://pixner.net/begam/profile.html"><i class="fas fa-share-alt"></i>View Profile</a></li>
-                                                  </ul>
-                                              </div>
-                                          </div>
-                                      </div>
-                                      <div class="admins-single">
-                                          <div class="left-area d-flex align-items-center">
-                                              <img src="images/admin-img-1.png" alt="images">
-                                              <div class="right-side">
-                                                  <h6>Davis Rosser</h6>
-                                                  <p class="text-sm">OLT Support</p>
-                                              </div>
-                                          </div>
-                                          <div class="right-area">
-                                              <div class="nice-select"><span class="current single-item share">
-                                                      <span class="dot"></span>
-                                                      <span class="dot"></span>
-                                                      <span class="dot"></span>
-                                                  </span>
-                                                  <ul class="list">
-                                                      <li><a href="tournaments-single.html#"><i class="fab fa-facebook-f"></i>Share</a></li>
-                                                      <li><a href="https://pixner.net/begam/profile.html"><i class="fas fa-share-alt"></i>View Profile</a></li>
-                                                  </ul>
-                                              </div>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
+
                           </div>
                       </div>
                   </div>
@@ -833,11 +759,13 @@
                           <div class="col-lg-12">
                               <div class="participants-area pb-120">
                                   <h4>Confirmed</h4>
+
+                                  @foreach($joined as $participant)
                                   <div class="participants-single">
                                       <div class="left-area d-flex align-items-center">
-                                          <img src="images/participant-1.png" alt="images">
+                                          <img src="{{ asset('UserProfile/'.$participant->profile_image) }}" alt="images">
                                           <div class="right-side">
-                                              <h6>Miracle Rosser</h6>
+                                              <h6>{{ $participant->name }}</h6>
                                           </div>
                                       </div>
                                       <div class="right-area">
@@ -848,191 +776,14 @@
                                               </span>
                                               <ul class="list">
                                                   <li><a href="tournaments-single.html#"><i class="fab fa-facebook-f"></i>Share</a></li>
-                                                  <li><a href="https://pixner.net/begam/profile.html"><i class="fas fa-share-alt"></i>View Profile</a></li>
+                                                  <li><a href="#"><i class="fas fa-share-alt"></i>View Profile</a></li>
                                               </ul>
                                           </div>
                                       </div>
                                   </div>
-                                  <div class="participants-single">
-                                      <div class="left-area d-flex align-items-center">
-                                          <img src="images/participant-2.png" alt="images">
-                                          <div class="right-side">
-                                              <h6>Miracle Rosser</h6>
-                                          </div>
-                                      </div>
-                                      <div class="right-area">
-                                          <div class="nice-select"><span class="current single-item share">
-                                                  <span class="dot"></span>
-                                                  <span class="dot"></span>
-                                                  <span class="dot"></span>
-                                              </span>
-                                              <ul class="list">
-                                                  <li><a href="tournaments-single.html#"><i class="fab fa-facebook-f"></i>Share</a></li>
-                                                  <li><a href="https://pixner.net/begam/profile.html"><i class="fas fa-share-alt"></i>View Profile</a></li>
-                                              </ul>
-                                          </div>
-                                      </div>
-                                  </div>
-                                  <div class="participants-single">
-                                      <div class="left-area d-flex align-items-center">
-                                          <img src="images/participant-3.png" alt="images">
-                                          <div class="right-side">
-                                              <h6>Miracle Rosser</h6>
-                                          </div>
-                                      </div>
-                                      <div class="right-area">
-                                          <div class="nice-select"><span class="current single-item share">
-                                                  <span class="dot"></span>
-                                                  <span class="dot"></span>
-                                                  <span class="dot"></span>
-                                              </span>
-                                              <ul class="list">
-                                                  <li><a href="tournaments-single.html#"><i class="fab fa-facebook-f"></i>Share</a></li>
-                                                  <li><a href="https://pixner.net/begam/profile.html"><i class="fas fa-share-alt"></i>View Profile</a></li>
-                                              </ul>
-                                          </div>
-                                      </div>
-                                  </div>
-                                  <div class="participants-single">
-                                      <div class="left-area d-flex align-items-center">
-                                          <img src="images/participant-4.png" alt="images">
-                                          <div class="right-side">
-                                              <h6>Miracle Rosser</h6>
-                                          </div>
-                                      </div>
-                                      <div class="right-area">
-                                          <div class="nice-select"><span class="current single-item share">
-                                                  <span class="dot"></span>
-                                                  <span class="dot"></span>
-                                                  <span class="dot"></span>
-                                              </span>
-                                              <ul class="list">
-                                                  <li><a href="tournaments-single.html#"><i class="fab fa-facebook-f"></i>Share</a></li>
-                                                  <li><a href="https://pixner.net/begam/profile.html"><i class="fas fa-share-alt"></i>View Profile</a></li>
-                                              </ul>
-                                          </div>
-                                      </div>
-                                  </div>
-                                  <div class="participants-single">
-                                      <div class="left-area d-flex align-items-center">
-                                          <img src="images/participant-5.png" alt="images">
-                                          <div class="right-side">
-                                              <h6>Miracle Rosser</h6>
-                                          </div>
-                                      </div>
-                                      <div class="right-area">
-                                          <div class="nice-select"><span class="current single-item share">
-                                                  <span class="dot"></span>
-                                                  <span class="dot"></span>
-                                                  <span class="dot"></span>
-                                              </span>
-                                              <ul class="list">
-                                                  <li><a href="tournaments-single.html#"><i class="fab fa-facebook-f"></i>Share</a></li>
-                                                  <li><a href="https://pixner.net/begam/profile.html"><i class="fas fa-share-alt"></i>View Profile</a></li>
-                                              </ul>
-                                          </div>
-                                      </div>
-                                  </div>
-                                  <div class="participants-single">
-                                      <div class="left-area d-flex align-items-center">
-                                          <img src="images/participant-6.png" alt="images">
-                                          <div class="right-side">
-                                              <h6>Miracle Rosser</h6>
-                                          </div>
-                                      </div>
-                                      <div class="right-area">
-                                          <div class="nice-select"><span class="current single-item share">
-                                                  <span class="dot"></span>
-                                                  <span class="dot"></span>
-                                                  <span class="dot"></span>
-                                              </span>
-                                              <ul class="list">
-                                                  <li><a href="tournaments-single.html#"><i class="fab fa-facebook-f"></i>Share</a></li>
-                                                  <li><a href="https://pixner.net/begam/profile.html"><i class="fas fa-share-alt"></i>View Profile</a></li>
-                                              </ul>
-                                          </div>
-                                      </div>
-                                  </div>
-                                  <div class="participants-single">
-                                      <div class="left-area d-flex align-items-center">
-                                          <img src="images/participant-7.png" alt="images">
-                                          <div class="right-side">
-                                              <h6>Miracle Rosser</h6>
-                                          </div>
-                                      </div>
-                                      <div class="right-area">
-                                          <div class="nice-select"><span class="current single-item share">
-                                                  <span class="dot"></span>
-                                                  <span class="dot"></span>
-                                                  <span class="dot"></span>
-                                              </span>
-                                              <ul class="list">
-                                                  <li><a href="tournaments-single.html#"><i class="fab fa-facebook-f"></i>Share</a></li>
-                                                  <li><a href="https://pixner.net/begam/profile.html"><i class="fas fa-share-alt"></i>View Profile</a></li>
-                                              </ul>
-                                          </div>
-                                      </div>
-                                  </div>
-                                  <div class="participants-single">
-                                      <div class="left-area d-flex align-items-center">
-                                          <img src="images/participant-8.png" alt="images">
-                                          <div class="right-side">
-                                              <h6>Miracle Rosser</h6>
-                                          </div>
-                                      </div>
-                                      <div class="right-area">
-                                          <div class="nice-select"><span class="current single-item share">
-                                                  <span class="dot"></span>
-                                                  <span class="dot"></span>
-                                                  <span class="dot"></span>
-                                              </span>
-                                              <ul class="list">
-                                                  <li><a href="tournaments-single.html#"><i class="fab fa-facebook-f"></i>Share</a></li>
-                                                  <li><a href="https://pixner.net/begam/profile.html"><i class="fas fa-share-alt"></i>View Profile</a></li>
-                                              </ul>
-                                          </div>
-                                      </div>
-                                  </div>
-                                  <div class="participants-single">
-                                      <div class="left-area d-flex align-items-center">
-                                          <img src="images/participant-9.png" alt="images">
-                                          <div class="right-side">
-                                              <h6>Miracle Rosser</h6>
-                                          </div>
-                                      </div>
-                                      <div class="right-area">
-                                          <div class="nice-select"><span class="current single-item share">
-                                                  <span class="dot"></span>
-                                                  <span class="dot"></span>
-                                                  <span class="dot"></span>
-                                              </span>
-                                              <ul class="list">
-                                                  <li><a href="tournaments-single.html#"><i class="fab fa-facebook-f"></i>Share</a></li>
-                                                  <li><a href="https://pixner.net/begam/profile.html"><i class="fas fa-share-alt"></i>View Profile</a></li>
-                                              </ul>
-                                          </div>
-                                      </div>
-                                  </div>
-                                  <div class="participants-single">
-                                      <div class="left-area d-flex align-items-center">
-                                          <img src="images/participant-10.png" alt="images">
-                                          <div class="right-side">
-                                              <h6>Miracle Rosser</h6>
-                                          </div>
-                                      </div>
-                                      <div class="right-area">
-                                          <div class="nice-select"><span class="current single-item share">
-                                                  <span class="dot"></span>
-                                                  <span class="dot"></span>
-                                                  <span class="dot"></span>
-                                              </span>
-                                              <ul class="list">
-                                                  <li><a href="tournaments-single.html#"><i class="fab fa-facebook-f"></i>Share</a></li>
-                                                  <li><a href="https://pixner.net/begam/profile.html"><i class="fas fa-share-alt"></i>View Profile</a></li>
-                                              </ul>
-                                          </div>
-                                      </div>
-                                  </div>
+
+                                @endforeach
+
                               </div>
                           </div>
                       </div>

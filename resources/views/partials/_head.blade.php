@@ -14,14 +14,14 @@
                 <nav class="navbar navbar-expand-lg p-0">
                     <div class="navbar-collapse collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav main-menu ml-auto">
-                            <li><a href="/" class="active">Home</a></li>
-                            <li class=""><a href="{{ route('tournaments.index') }}">Tournaments</a>
+                            <li><a href="/" class="{{ Request::is('/') ? "active" : "" }}">Home</a></li>
+                            <li><a href="{{ route('tournaments.index') }}" class="{{ Request::is('tournaments*') ? "active" : "" }}">Tournaments</a>
 
                             </li>
                               <li><a href="#" class="">Shop</a></li>
 
-                            <li><a href="{{ route('contact') }}">Contact</a></li>
-                              <li><a href="{{ route('about') }}" class="">About US</a></li>
+                            <li><a href="{{ route('contact') }}" class="{{ Request::is('contact') ? "active" : "" }}">Contact</a></li>
+                              <li><a href="{{ route('about') }}" class="{{ Request::is('about') ? "active" : "" }}">About US</a></li>
                         </ul>
                     </div>
                 </nav>

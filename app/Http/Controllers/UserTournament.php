@@ -66,7 +66,9 @@ class UserTournament extends Controller
     {
         $tournament = Tournament::find($id);
 
-        return view('tournamentDetails',compact('tournament'));
+        $joined = $tournament->users( )->get();
+
+        return view('tournamentDetails',compact('tournament','joined'));
     }
 
     /**

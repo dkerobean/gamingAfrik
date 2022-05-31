@@ -151,7 +151,7 @@
                       </div>
                       <div class="col-lg-6 col-md-9 d-flex align-items-center">
                           <div class="mid-area">
-                              <h4>{{ $tournament->name }}</h4>
+                              <a href="{{ route('tournaments.show', $tournament->id) }}"><h4>{{ $tournament->name }}</h4></a>
                               <div class="title-bottom d-flex">
                                   <div class="time-area bg">
                                       <img src="images/waitng-icon.png" alt="image">
@@ -272,7 +272,7 @@
                                   <img src="images/player-1.png" alt="image">
                               </div>
                           </div>
-                          <a href="https://pixner.net/begam/profile.html"><h5>Barton Griggs</h5></a>
+                          <a href="#"><h5>Barton Griggs</h5></a>
                           <p class="date">
                               <span class="text-sm earn">1970 XP Earned</span>
                               <span class="text-sm">04/05 - 04/12</span>
@@ -280,7 +280,7 @@
                           <p class="text-sm credit">
                               <span class="text-sm"><img src="images/credit-icon.png" alt="image"> +20 credits</span>
                           </p>
-                          <a href="https://pixner.net/begam/profile.html" class="cmn-btn">View Profile</a>
+                          <a href="#" class="cmn-btn">View Profile</a>
                       </div>
                   </div>
                   <div class="col-lg-4 col-md-6">
@@ -293,7 +293,7 @@
                                   <img src="images/player-2.png" alt="image">
                               </div>
                           </div>
-                          <a href="https://pixner.net/begam/profile.html"><h5>Mervin Trask</h5></a>
+                          <a href="#"><h5>Mervin Trask</h5></a>
                           <p class="date">
                               <span class="text-sm earn">1970 XP Earned</span>
                               <span class="text-sm">04/05 - 04/12</span>
@@ -301,7 +301,7 @@
                           <p class="text-sm credit">
                               <span class="text-sm"><img src="images/credit-icon.png" alt="image"> +20 credits</span>
                           </p>
-                          <a href="https://pixner.net/begam/profile.html" class="cmn-btn">View Profile</a>
+                          <a href="#" class="cmn-btn">View Profile</a>
                       </div>
                   </div>
                   <div class="col-lg-4 col-md-6">
@@ -311,7 +311,7 @@
                                   <img src="images/player-3.png" alt="image">
                               </div>
                           </div>
-                          <a href="https://pixner.net/begam/profile.html"><h5>Adria Poulin</h5></a>
+                          <a href="#"><h5>Adria Poulin</h5></a>
                           <p class="date">
                               <span class="text-sm earn">1970 XP Earned</span>
                               <span class="text-sm">04/05 - 04/12</span>
@@ -319,7 +319,7 @@
                           <p class="text-sm credit">
                               <span class="text-sm"><img src="images/credit-icon.png" alt="image"> +20 credits</span>
                           </p>
-                          <a href="https://pixner.net/begam/profile.html" class="cmn-btn">View Profile</a>
+                          <a href="#" class="cmn-btn">View Profile</a>
                       </div>
                   </div>
               </div>
@@ -412,12 +412,12 @@
                       </div>
                       <div class="col-lg-4 col-md-5 col-sm-5 d-flex align-items-center">
                           <div class="section-item">
-                              <h4>Invite Friends and Win Rewards.Join BEGAM Games today</h4>
+                              <h4>Invite Friends and Win Rewards. Join GamingAfrik Games today</h4>
                           </div>
                       </div>
                       <div class="col-lg-4 col-md-6 col-sm-6 d-flex justify-content-center justify-content-sm-end align-items-center">
                           <div class="btn-area d-flex justify-content-center justify-content-sm-end align-items-center">
-                              <a href="https://pixner.net/begam/registration.html" class="cmn-btn">Join Now</a>
+                              <a href="/register" class="cmn-btn">Join Now</a>
                           </div>
                           <img src="images/call-to-action-right.png" alt="image">
                       </div>
@@ -519,7 +519,7 @@
                       <div class="left-area">
                           <h2 class="title">Build Your Esports Profile</h2>
                           <p>Showcase your achievements, match history and win rate while you build your reputation on Begam.</p>
-                          <a href="https://pixner.net/begam/registration.html" class="cmn-btn-second">Sign Up Free</a>
+                          <a href="" class="cmn-btn-second">Sign Up Free</a>
                       </div>
                   </div>
                   <div class="col-lg-5 col-md-6">

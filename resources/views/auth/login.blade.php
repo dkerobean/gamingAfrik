@@ -84,7 +84,7 @@
                 <div class="top-area">
                     <div class="row d-flex align-items-center">
                         <div class="col-sm-5 col">
-                            <a class="back-home" href="#">
+                            <a class="back-home" href="/">
                                 <img src="images/left-icon.png" alt="image">
                                 Back To GamingAfrik
                             </a>
